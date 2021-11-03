@@ -1,0 +1,15 @@
+.formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+}
+
+.alert {
+    text-align: center;
+}
+
+.btn{
+    width: 150px;
+    margin: 5px;
+}
