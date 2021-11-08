@@ -16,14 +16,14 @@ export class NavbarComponent implements OnInit {
   }
 
   checkSession(){
-    if (localStorage.getItem('nombre')){
+    if (localStorage.getItem('name')){
       return true;
     }
     return false;
   }
 
   closeSession(){
-    localStorage.removeItem('nombre');
+    localStorage.removeItem('name');
     this.router.navigate(['']);
   }
 }

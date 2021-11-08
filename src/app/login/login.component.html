@@ -1,17 +1,17 @@
-<h1 style="text-align: center; margin-top: 12%;">Tiendas La Generica</h1>
+<h1 style="text-align: center; margin-top: 12%;">Tiendas las Generica</h1>
 <h2 style="text-align: center;">Iniciar sesión</h2>
 <div class="formulario" style="margin-top: 30px;">
-    <form>
-        <div class="alert alert-danger">
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin(loginForm.value)">
+        <div class="alert alert-danger" *ngIf="errorStatus">
             Usuario y/o contraseña incorrectos
         </div>
         <div class="mb-3">
             <label for="username" class="form-label">Usuario</label>
-            <input type="text" class="form-control" formControlName="usuario">
+            <input type="text" class="form-control" [ngClass]="{'is-invalid' : errorStatus}" formControlName="username">
         </div>
         <div class="mb-3">
             <label for="password" class="form-label">Contraseña</label>
-            <input type="password" class="form-control" formControlName="password">
+            <input type="password" class="form-control" [ngClass]="{'is-invalid' : errorStatus}" formControlName="password">
         </div>
 
         <div class="d-flex justify-content-center" style="text-align:center; margin-top: 30px;">
